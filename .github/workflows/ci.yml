@@ -35,7 +35,7 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter @aimodoo/api test --coverage
+      - run: pnpm --filter @aimodoo/api test:cov
 
   build:
     name: Build
