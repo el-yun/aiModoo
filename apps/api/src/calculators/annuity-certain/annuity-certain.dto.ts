@@ -7,6 +7,7 @@ export class AnnuityCertainRequestDto {
   @ApiProperty({ description: '월 지급액 (원)', example: 1000000 })
   @IsNumber()
   @Min(1)
+  @Max(1_000_000_000)
   monthlyPayment!: number;
 
   @ApiProperty({ description: '지급 기간 (년)', example: 10 })

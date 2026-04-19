@@ -1,14 +1,9 @@
 {
+  "status": "completed",
+  "progress": 100,
+  "branchName": "feature/1-annuity-calculator",
+  "commitSha": "c8e9f0b843a35e9b1d25e99062016f6cb3b04292",
   "agent": "commit-agent",
-  "status": "in_progress",
-  "startedAt": "2026-04-19T22:15:00Z",
-  "progress": 10,
-  "retries": 0,
-  "log": [
-    {
-      "ts": "2026-04-19T22:15:00Z",
-      "event": "started",
-      "detail": "커밋 에이전트 시작"
-    }
-  ]
+  "updatedAt": "2026-04-19T13:18:23.628Z",
+  "log": []
 }
