@@ -1,0 +1,68 @@
+{
+  "agent": "issue-agent",
+  "status": "completed",
+  "startedAt": "2026-04-19T13:05:00Z",
+  "completedAt": "2026-04-19T13:12:00Z",
+  "progress": 100,
+  "currentTask": "완료",
+  "retries": 0,
+  "issueNumber": 1,
+  "issueUrl": "https://github.com/el-yun/aiModoo/issues/1",
+  "issueType": "new-feature",
+  "spec": {
+    "title": "feat: 프로젝트 초기 셋업 및 유기정기금 평가 계산기 구현",
+    "description": "AI모두계산기 프로젝트의 첫 번째 계산기(유기정기금 평가)를 구현하기 위한 0→1 이슈. 모노레포 골격, 다크 테마 디자인 시스템, 프론트/백엔드 구현, Vercel/Railway 배포까지 포함.",
+    "approach": "pnpm workspaces 모노레포(Next.js 15 App Router + NestJS) + Toss TDS 참고 자체 구현 다크 테마 디자인 시스템 + zod 스키마 FE/BE 공유 + Decimal.js 기반 정확 계산",
+    "affectedFiles": [
+      "pnpm-workspace.yaml",
+      "package.json",
+      "packages/shared/src/schemas/annuity-certain.schema.ts",
+      "apps/web/src/app/calculators/annuity-certain/page.tsx",
+      "apps/web/src/components/tds/",
+      "apps/web/src/styles/tokens.css",
+      "apps/api/src/calculators/annuity-certain/",
+      "vercel.json",
+      "apps/api/Dockerfile",
+      "railway.json"
+    ],
+    "checklist": [
+      "모노레포 초기 셋업 (pnpm workspaces, tsconfig, eslint, prettier)",
+      "packages/shared — zod 스키마 및 공유 타입 패키지",
+      "Next.js 15 App Router 프론트엔드 생성",
+      "Toss TDS 기반 다크 테마 디자인 토큰(tokens.css)",
+      "TDS 컴포넌트(Button/TextField/Segment/Section/ListItem/TopBar/Skeleton) 직접 구현",
+      "유기정기금 계산기 UI(Form/Result/Schedule) 및 react-hook-form+zod 검증",
+      "NestJS API 생성 및 ValidationPipe/HttpExceptionFilter/CORS/Helmet/pino 설정",
+      "AnnuityCertainService — Decimal.js 기반 기초/기말 PV 계산 + 기간별 schedule",
+      "서비스 단위 테스트(기초/기말/0%/경계값/음수 검증 등)",
+      "/health 엔드포인트 및 Swagger(dev)",
+      "Vercel 배포 설정(vercel.json, 환경변수)",
+      "Railway 배포 설정(Dockerfile/railway.json, healthcheck)",
+      "GitHub Actions CI(lint/typecheck/test/build)",
+      "README 및 계산기 공식 문서"
+    ],
+    "acceptanceCriteria": [
+      "월 100만원, 10년, 연 5%, 기말 → 약 94,281,350원",
+      "월 100만원, 10년, 연 5%, 기초 → 약 94,674,023원",
+      "월 50만원, 5년, 연 0%, 기말 → 30,000,000원",
+      "월 100만원, 100년, 연 3%, 기말 → 정확도 이슈 없이 응답",
+      "지급기간 0년 0월 → 400 ValidationError",
+      "할인율 음수 → 400 ValidationError"
+    ],
+    "figmaSpec": {
+      "enabled": false,
+      "components": [],
+      "colorTokens": {}
+    }
+  },
+  "log": [
+    { "ts": "2026-04-19T13:05:00Z", "event": "started" },
+    { "ts": "2026-04-19T13:05:30Z", "event": "repo-accessible", "detail": "el-yun/aiModoo (public, empty)" },
+    { "ts": "2026-04-19T13:06:00Z", "event": "classified", "detail": "new-feature" },
+    { "ts": "2026-04-19T13:06:30Z", "event": "analysis-skipped", "detail": "빈 저장소 — 코드베이스 분석 N/A" },
+    { "ts": "2026-04-19T13:07:00Z", "event": "dialog-skipped", "detail": "요구사항이 상세히 제공되어 문답 생략" },
+    { "ts": "2026-04-19T13:10:00Z", "event": "body-drafted" },
+    { "ts": "2026-04-19T13:11:30Z", "event": "labels-created", "detail": "bylane-auto, calculator, setup" },
+    { "ts": "2026-04-19T13:12:00Z", "event": "issue-created", "issueNumber": 1, "issueUrl": "https://github.com/el-yun/aiModoo/issues/1" }
+  ]
+}

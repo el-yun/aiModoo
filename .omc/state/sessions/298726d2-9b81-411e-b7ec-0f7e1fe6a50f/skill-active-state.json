@@ -1,0 +1,10 @@
+{
+  "active": true,
+  "skill_name": "bylane-commit-agent",
+  "session_id": "298726d2-9b81-411e-b7ec-0f7e1fe6a50f",
+  "started_at": "2026-04-19T13:14:26.617Z",
+  "last_checked_at": "2026-04-19T13:14:26.617Z",
+  "reinforcement_count": 0,
+  "max_reinforcements": 3,
+  "stale_ttl_ms": 300000
+}
