@@ -42,7 +42,7 @@ export function AnnuityScheduleTable({ schedule }: AnnuityScheduleTableProps) {
             {visibleRows.map((row) => (
               <tr key={row.period}>
                 <td>{row.period}월</td>
-                <td>{row.discountFactor.toFixed(6)}</td>
+                <td>{Number(row.discountFactor).toFixed(6)}</td>
                 <td>{formatKRW(row.pv)}</td>
                 <td>{formatKRW(row.cumulativePv)}</td>
               </tr>
