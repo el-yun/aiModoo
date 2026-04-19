@@ -1,5 +1,5 @@
 FROM node:20-alpine AS base
-RUN npm install -g pnpm
+RUN npm install -g pnpm@8
 
 # Dependencies
 FROM base AS deps
@@ -31,7 +31,7 @@ RUN pnpm --filter @aimodoo/api build
 
 # Production image
 FROM node:20-alpine AS runner
-RUN npm install -g pnpm
+RUN npm install -g pnpm@8
 WORKDIR /app
 ENV NODE_ENV=production
 
