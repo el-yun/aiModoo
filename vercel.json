@@ -1,9 +1,6 @@
 {
-  "buildCommand": "cd ../.. && pnpm --filter @aimodoo/web build",
+  "buildCommand": "pnpm --filter @aimodoo/web build",
   "outputDirectory": "apps/web/.next",
   "framework": "nextjs",
-  "installCommand": "pnpm install",
-  "env": {
-    "NEXT_PUBLIC_API_URL": "@api_url"
-  }
+  "installCommand": "pnpm install --frozen-lockfile"
 }
